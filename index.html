@@ -4,18 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0F0F0F">
-<title>Спринт №1: досить знімати наодинці · Ютубнутий</title>
-<meta name="description" content="Камерна група ютуберів, які публікують паралельно і бачать роботу одне одного. 12 тижнів, 10 відео, три прямі ефіри з розборами. 25 місць.">
+<title>Ютубнутий Спринт №1 · Досить знімати наодинці</title>
+<meta name="description" content="Камерна група ютуберів, які разом публікують і розвивають канали одне одного. Три місяці, двісті пʼятдесят відео, три прямі ефіри з розборами 12 каналів під наглядом ютуб-стратега.">
 
-<link rel="canonical" href="https://youtubnutiy.com/sprint">
+<!-- ЗАМІНИ URL, коли переїдеш на свій домен (напр. https://youtubnutiy.com/sprint/) -->
+<link rel="canonical" href="https://duorlolz7-hue.github.io/youtube_sprint/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ютубнутий">
 <meta property="og:locale" content="uk_UA">
-<meta property="og:title" content="Спринт №1: досить знімати наодинці">
-<meta property="og:description" content="12 тижнів. 25 місць. Група, яка публікує паралельно і бачить роботу одне одного.">
-<meta property="og:url" content="https://youtubnutiy.com/sprint">
-<meta property="og:image" content="https://youtubnutiy.com/og-sprint.jpg">
+<meta property="og:title" content="Ютубнутий Спринт №1 · Досить знімати наодинці">
+<meta property="og:description" content="Камерна група ютуберів, які разом публікують і розвивають канали одне одного. Три місяці, двісті пʼятдесят відео, три прямі ефіри з розборами 12 каналів під наглядом ютуб-стратега.">
+<meta property="og:url" content="https://duorlolz7-hue.github.io/youtube_sprint/">
+<!-- ЗАМІНИ на власну обкладинку 1200×630. Зараз стоїть кадр з ефіру. -->
+<meta property="og:image" content="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558906/image_2026-08-12_20-13-10.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ютубнутий Спринт №1">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ютубнутий Спринт №1 · Досить знімати наодинці">
+<meta name="twitter:description" content="Камерна група ютуберів, які разом публікують і розвивають канали одне одного. Три місяці, двісті пʼятдесят відео, три прямі ефіри з розборами 12 каналів під наглядом ютуб-стратега.">
+<meta name="twitter:image" content="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558906/image_2026-08-12_20-13-10.png">
 
 <style>
 /* ── ШРИФТИ ЛОКАЛЬНО ──────────────────────────────────────
@@ -54,7 +62,7 @@
   --text-xl:clamp(1.1875rem,3.6vw,1.5rem);
   --text-2xl:clamp(1.5rem,5.5vw,2.25rem);
   --text-huge:clamp(1.875rem,7vw,3.5rem);
-  --text-hero:clamp(2rem,8vw,4.25rem);
+  --text-hero:clamp(2.25rem,9.5vw,4.5rem);
 
   --sp-xs:clamp(.5rem,1.5vw,.75rem);
   --sp-sm:clamp(.75rem,2vw,1rem);
@@ -108,16 +116,21 @@ section{padding:var(--sp-xl) 0}
 .hero::before{content:"";position:absolute;left:-15%;bottom:-35%;width:130%;height:75%;
   background:radial-gradient(closest-side,rgba(255,0,0,.25),transparent);pointer-events:none}
 .hero__in{position:relative;width:100%}
+@media (max-width:520px){
+  .hero .wrap{padding-left:16px;padding-right:16px}
+  .hero__meta{gap:.45rem}
+  .chip{padding:.4rem .8rem}
+}
 
-.pill{display:inline-flex;align-items:center;gap:9px;background:var(--ink-3);color:#fff;
-  padding:.5rem 1.05rem;border-radius:var(--r-pill);font-size:var(--text-xs);font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;margin-bottom:var(--sp-md)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--ink-3);color:#fff;
+  padding:.4rem .85rem;border-radius:var(--r-pill);font-size:clamp(.6875rem,2.2vw,.8125rem);font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--sp-md)}
 .pill__dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 
-h1{font-family:var(--font-display);font-size:var(--text-hero);line-height:1;font-weight:900;letter-spacing:-.04em;margin-bottom:var(--sp-md)}
+h1{font-family:var(--font-display);font-size:var(--text-hero);line-height:.98;font-weight:900;letter-spacing:-.055em;margin-bottom:var(--sp-sm)}
 h1 .red{color:var(--red)}
-.hero__sub{font-size:clamp(.9375rem,3.4vw,1.25rem);line-height:1.5;color:#D6D6D6;max-width:64ch;margin-bottom:var(--sp-lg);text-wrap:pretty}
+.hero__sub{font-size:clamp(.875rem,3.1vw,1.1875rem);line-height:1.5;color:#B8B8B8;max-width:58ch;margin-bottom:var(--sp-lg);text-wrap:pretty}
 .hero__row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-md) var(--sp-lg);
   margin-bottom:var(--sp-lg)}
 .hero__meta{display:flex;flex-wrap:wrap;gap:.6rem;margin:0}
