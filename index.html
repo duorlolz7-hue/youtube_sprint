@@ -101,7 +101,6 @@ body.scrolled .seek__dot{transform:translate(50%,-50%) scale(1)}
 .btn--ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
 .btn--ghost:hover,.btn--ghost:focus-visible{border-color:#fff}
 .btn--lg{min-height:58px;padding:1.05rem 2.2rem;font-size:var(--text-lg)}
-.bar__note{color:var(--grey-2);font-size:var(--text-xs);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 
 section{padding:var(--sp-xl) 0}
 .hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;
@@ -118,7 +117,7 @@ section{padding:var(--sp-xl) 0}
 
 h1{font-family:var(--font-display);font-size:var(--text-hero);line-height:1;font-weight:900;letter-spacing:-.04em;margin-bottom:var(--sp-md)}
 h1 .red{color:var(--red)}
-.hero__sub{font-size:var(--text-lg);color:#D6D6D6;max-width:64ch;margin-bottom:var(--sp-lg);text-wrap:pretty}
+.hero__sub{font-size:clamp(.9375rem,3.4vw,1.25rem);line-height:1.5;color:#D6D6D6;max-width:64ch;margin-bottom:var(--sp-lg);text-wrap:pretty}
 .hero__row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-md) var(--sp-lg);
   margin-bottom:var(--sp-lg)}
 .hero__meta{display:flex;flex-wrap:wrap;gap:.6rem;margin:0}
@@ -489,7 +488,6 @@ body.lock{overflow:hidden}
 <header class="bar">
   <div class="wrap bar__in">
     <a class="logo" href="#top"><span class="logo__play"></span>ЮТУБНУТИЙ</a>
-    <span class="bar__note">Ютуб Спринт: 14.09.2026 - 07.12.2026</span>
   </div>
 </header>
 
@@ -847,7 +845,7 @@ body.lock{overflow:hidden}
     <div class="price">
       <div>
         <div class="price__num">80 €</div>
-        <div class="price__per">за весь спринт · 27 € на місяць</div>
+        <div class="price__per">за весь спринт</div>
         <p class="note">
           Ціна така, щоб зайти було не боляче, але щоб зникнути на другому тижні було шкода. Гроші тут працюють як зобовʼязання. І це перший потік: ти заходиш без відгуків, тому ціна нижча за майбутню.
         </p>
@@ -929,7 +927,6 @@ body.lock{overflow:hidden}
 <footer>
   <div class="wrap">
     <nav class="foot__nav">
-      <a href="https://t.me/Youtubnutiy_ua" target="_blank" rel="noopener">Телеграм</a>
       <a href="https://www.instagram.com/mikeduor/" target="_blank" rel="noopener">Інстаграм</a>
       <a href="https://www.youtube.com/@youtubnutiy" target="_blank" rel="noopener">Ютуб</a>
       <button type="button" data-legal="impressum">Правова інформація</button>
