@@ -107,6 +107,8 @@ body.scrolled .seek__dot{transform:translate(50%,-50%) scale(1)}
 .btn--red{background:var(--red);color:#fff}
 .btn--red:hover,.btn--red:focus-visible{background:var(--red-dark);transform:translateY(-2px)}
 .btn--ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn--tg{background:#229ED9;color:#fff}
+.btn--tg:hover,.btn--tg:focus-visible{background:#1B8CC2;transform:translateY(-2px)}
 .btn--ghost:hover,.btn--ghost:focus-visible{border-color:#fff}
 .btn--lg{min-height:58px;padding:1.05rem 2.2rem;font-size:var(--text-lg)}
 
@@ -372,9 +374,12 @@ details p{color:var(--grey);margin-top:.5rem;font-size:var(--text-sm);text-wrap:
 .later p{font-size:var(--text-sm);color:var(--grey-2);max-width:var(--m-wide);margin:0 auto var(--sp-md);text-wrap:balance}
 
 footer{background:var(--ink);color:var(--grey-2);padding:var(--sp-lg) 0;font-size:var(--text-sm)}
-.foot__nav{display:flex;flex-wrap:wrap;gap:var(--sp-sm) var(--sp-lg);justify-content:center;align-items:center}
-footer a,footer button{display:inline-flex;align-items:center;min-height:44px;
-  color:var(--grey-2);text-decoration:none;font:inherit;font-size:var(--text-sm);line-height:1;
+.foot__nav{display:flex;flex-wrap:nowrap;gap:clamp(.75rem,3vw,2rem);justify-content:center;align-items:center}
+@media (max-width:560px){
+  .foot__nav{flex-wrap:wrap;gap:.5rem 1.1rem}
+}
+footer a,footer button{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;
+  color:var(--grey-2);text-decoration:none;font:inherit;font-size:clamp(.75rem,1.5vw,.9375rem);line-height:1;
   background:0;border:0;padding:0;margin:0;cursor:pointer;text-align:left}
 footer a:hover,footer button:hover,footer a:focus-visible,footer button:focus-visible{color:#fff}
 
@@ -932,7 +937,10 @@ body.lock{overflow:hidden}
 
     <div class="later">
       <p>Ще не впевнений або дати не підходять? Заходь у телеграм — там я пишу користь + дізнаєшся коли відкриється другий потік.</p>
-      <a class="btn btn--ghost" href="https://t.me/Youtubnutiy_ua" target="_blank" rel="noopener">Підписатись на телеграм</a>
+      <a class="btn btn--tg" href="https://t.me/Youtubnutiy_ua" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 12.7l-4.8-1.5c-1-.3-1.1-1 .2-1.5l18.8-7.3c.9-.3 1.6.2 1.4 1.9z"/></svg>
+        Підписатись на телеграм
+      </a>
     </div>
   </div>
 </section>
