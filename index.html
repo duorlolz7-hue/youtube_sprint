@@ -55,23 +55,23 @@
   --paper:#FFFFFF; --paper-2:#EDEDED; --line:#D8D8D8;
   --grey:#606060; --grey-2:#AAAAAA;
 
-  --text-xs:clamp(.75rem,1.8vw,.8125rem);
-  --text-sm:clamp(.875rem,2vw,.9375rem);
-  --text-base:clamp(1rem,2.4vw,1.0625rem);
-  --text-lg:clamp(1.0625rem,2.8vw,1.25rem);
-  --text-xl:clamp(1.1875rem,3.6vw,1.5rem);
-  --text-2xl:clamp(1.5rem,5.5vw,2.25rem);
-  --text-huge:clamp(1.875rem,7vw,3.5rem);
-  --text-hero:clamp(2.25rem,9.5vw,4.25rem);
+  --text-xs:clamp(.75rem,1.8vw,.9375rem);
+  --text-sm:clamp(.875rem,2vw,1.0625rem);
+  --text-base:clamp(1rem,2.4vw,1.1875rem);
+  --text-lg:clamp(1.0625rem,2.8vw,1.4375rem);
+  --text-xl:clamp(1.1875rem,3.6vw,1.75rem);
+  --text-2xl:clamp(1.5rem,5.5vw,2.75rem);
+  --text-huge:clamp(1.875rem,7vw,4.5rem);
+  --text-hero:clamp(2.25rem,9.5vw,5.25rem);
 
   --sp-xs:clamp(.5rem,1.5vw,.75rem);
   --sp-sm:clamp(.75rem,2vw,1rem);
   --sp-md:clamp(1rem,3vw,1.5rem);
-  --sp-lg:clamp(1.5rem,5vw,2.75rem);
-  --sp-xl:clamp(2.25rem,6vw,4rem);
+  --sp-lg:clamp(1.5rem,5vw,3.5rem);
+  --sp-xl:clamp(2.25rem,6vw,5.5rem);
 
   --r:12px; --r-lg:20px; --r-pill:999px;
-  --wrap:1560px;
+  --wrap:2200px;
 
   /* довжина рядка: вужче на мобільному, ширше на десктопі */
   --m-tight:38ch; --m-wide:60ch;
@@ -85,7 +85,7 @@ body{
   font-size:var(--text-base);line-height:1.55;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--sp-md)}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 clamp(1rem,3.5vw,5rem)}
 
 .seek{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.2);z-index:100}
 .seek__fill{height:100%;width:0;background:var(--red);position:relative}
@@ -133,6 +133,7 @@ section{padding:var(--sp-xl) 0}
   .chip{padding:.4rem .8rem}
 }
 @media (min-width:960px){
+  :root{--text-hero:clamp(2.25rem,4.6vw,4.25rem)}
   .hero{min-height:min(88svh,820px)}
   .hero__in{grid-template-columns:1.12fr 1fr;gap:clamp(2.5rem,3.5vw,4rem);align-items:center}
   .hero__cap{text-align:left;font-size:var(--text-sm)}
@@ -170,10 +171,10 @@ h1 .red{color:var(--red)}
 h2{font-family:var(--font-display);font-size:var(--text-huge);line-height:1.05;font-weight:900;letter-spacing:-.035em;
   text-transform:uppercase;text-wrap:balance;overflow-wrap:break-word}
 h3{font-size:var(--text-xl);font-weight:700;letter-spacing:-.01em;line-height:1.2}
-.lead{font-size:var(--text-lg);color:var(--grey);margin-top:var(--sp-sm);text-wrap:pretty;max-width:105ch}
+.lead{font-size:var(--text-lg);color:var(--grey);margin-top:var(--sp-sm);text-wrap:pretty}
 .dark{background:var(--ink);color:#fff}
 .dark .lead{color:var(--grey-2)}
-.note{font-size:var(--text-sm);color:var(--grey);margin-top:var(--sp-md);text-wrap:pretty;max-width:115ch}
+.note{font-size:var(--text-sm);color:var(--grey);margin-top:var(--sp-md);text-wrap:pretty}
 .dark .note{color:var(--grey-2)}
 
 /* ── CTA-смуга між блоками */
@@ -382,14 +383,18 @@ section:not(.dark) .cta{background:var(--ink)}
 .step p{color:var(--grey);font-size:var(--text-sm)}
 .step p b{color:var(--ink)}
 
-details{border-bottom:1px solid var(--line);padding:var(--sp-sm) 0}
+details{border-bottom:1px solid var(--line);padding:var(--sp-sm) 0;break-inside:avoid}
+@media (min-width:1100px){
+  .faq{columns:2;column-gap:var(--sp-xl)}
+  .faq details{break-inside:avoid}
+}
 summary{list-style:none;cursor:pointer;font-weight:700;font-size:var(--text-lg);
   display:flex;justify-content:space-between;gap:var(--sp-sm);align-items:center;min-height:44px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"";width:11px;height:11px;border-right:2.5px solid var(--red);border-bottom:2.5px solid var(--red);
   transform:rotate(45deg);transition:transform .2s ease;flex:none;margin-right:4px}
 details[open] summary::after{transform:rotate(-135deg)}
-details p{color:var(--grey);margin-top:.5rem;font-size:var(--text-sm);text-wrap:pretty;max-width:115ch}
+details p{color:var(--grey);margin-top:.5rem;font-size:var(--text-sm);text-wrap:pretty}
 
 .final{text-align:center}
 .final h2{margin-bottom:var(--sp-md)}
@@ -497,7 +502,7 @@ body.lock{overflow:hidden}
 @media (min-width:768px){
   :root{--m-tight:44ch; --m-wide:68ch}
   .pain{grid-template-columns:1fr 1fr;gap:var(--sp-md)}
-  .kit__item p{max-width:110ch}
+
   .why{grid-template-columns:repeat(3,1fr);gap:var(--sp-md)}
   .week{grid-template-columns:repeat(2,1fr);gap:var(--sp-md)}
   .kit__item .week{gap:var(--sp-sm);grid-template-columns:repeat(2,1fr)}
@@ -512,6 +517,18 @@ body.lock{overflow:hidden}
   .steps{grid-template-columns:repeat(3,1fr);padding:0 var(--sp-lg)}
   .panel{padding:var(--sp-lg)}
   .price{grid-template-columns:1fr 1fr;padding:var(--sp-lg);align-items:center}
+}
+@media (min-width:1600px){
+  :root{--text-hero:clamp(4.25rem,4.6vw,5.25rem)}
+  .pain{grid-template-columns:repeat(4,1fr)}
+  .kit{grid-template-columns:1fr 1fr;align-items:start}
+  .kit__item{grid-column:auto}
+  .lead{max-width:120ch}
+  .note{max-width:130ch}
+}
+@media (min-width:2000px){
+  .faq{column-gap:calc(var(--sp-xl) * 1.5)}
+  .lead{max-width:110ch}
 }
 @media (min-width:1024px){
   :root{--m-tight:48ch; --m-wide:76ch}
@@ -903,12 +920,15 @@ body.lock{overflow:hidden}
     <div class="sec-head">
       <h2>Питання</h2>
     </div>
-    <details><summary>Якщо у мене немає часу на відео щотижня</summary><p>Ми формуємо графік персонально під тебе і твої можливості (саме тому можуть бути і довгі відео і шортс), тому не хвилюйся. Але це все ж спринт і я буду вимагати роботи, якщо ти не готовий працювати, то він не для тебе. Але чесно: якщо на канал немає навіть пʼяти годин на тиждень, спринт буде без ефективним.</p></details>
+    <div class="faq">
+      <details><summary>Якщо у мене немає часу на відео щотижня</summary><p>Ми формуємо графік персонально під тебе і твої можливості (саме тому можуть бути і довгі відео і шортс), тому не хвилюйся. Але це все ж спринт і я буду вимагати роботи, якщо ти не готовий працювати, то він не для тебе. Але чесно: якщо на канал немає навіть пʼяти годин на тиждень, спринт буде без ефективним.</p></details>
     <details><summary>Чи розберемо на ефірі саме мій канал?</summary><p>За 1 ефір я розберу чотири канали, тобто дванадцять за спринт. При повній групі в двадцять пʼять це приблизно половина, а якщо група вийде меншою, шанс у кожного росте. Канал який потрапив на розбір, повторно в нього не потрапляє. Голосування відбувається випадково з тих хто є присутнім на ефірі наживо: розбирати канал без його автора немає сенсу, це перетворюється на монолог. Ті, кого колесо не обрало, отримують дванадцять чужих розборів, де свої помилки видно не гірше, і звісно відповіді на додаткові питання на кожному ефірі.</p></details>
     <details><summary>А якщо в мене ще немає каналу?</summary><p>Заходь. Перший тиждень витратиш на запуск, далі йдеш у загальному ритмі. Стартувати всередині групи легше, ніж наодинці.</p></details>
     <details><summary>А якщо я випаду?</summary><p>Надіюсь ти це не читаєш і в тебе немає таких думок, але якщо ти вирішиш здатися. То спершу я напишу особисто. Якщо ритм таки зламався, то телеграм чат переходить у режим читання: ефіри, розбори і записи залишаються з тобою, зникає тільки право спілкуватися. Повертається воно першим же опублікованим відео.</p></details>
     <details><summary>А ШІ-канали, faceless і перезаливи?</summary><p>Не моя тема. Я працюю з довгою стратегією: контент, позиціонування, ідея, психологія глядача, аудиторія. Канали, які через місяць можуть заблокувати, схеми перезаливу чужих відео і швидкі способи монетизації — це інший ринок, де правила змінюються щотижня. Я відповідаю за екологічний і системний ріст на ютубі, тому якщо ти прийшов за схемами, спринт тобі не підійде.</p></details>
     <details><summary>Це як курс?</summary><p>Ні. Спринт це сумісна робота і обмін знаннями. Уроків і домашок немає, є активна спільнота, план, три прямі ефіри з розборами і спільний чат. Твій результат залежить від твоєї активності.</p></details>
+    </div>
+  
   </div>
 </section>
 
