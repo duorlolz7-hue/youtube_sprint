@@ -214,10 +214,10 @@ section:not(.dark) .cta{background:var(--ink)}
 
 
 .pain{display:grid;gap:var(--sp-sm)}
-.pain__item{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);color:#fff;
-  padding:var(--sp-lg) var(--sp-md);position:relative}
-.pain__item h3{margin-bottom:.5rem;font-size:var(--text-lg);color:#fff}
-.pain__item p{color:var(--grey-2);font-size:var(--text-sm);text-wrap:pretty}
+.pain__item{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);
+  color:#fff;padding:var(--sp-lg) var(--sp-md)}
+.pain__item h3{margin-bottom:.6rem;font-size:var(--text-xl);color:#fff;letter-spacing:-.01em}
+.pain__item p{color:var(--grey-2);font-size:var(--text-sm);max-width:70ch;line-height:1.6}
 
 .figs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);margin-top:var(--sp-md)}
 .fig{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:var(--sp-sm) var(--sp-md)}
@@ -305,40 +305,58 @@ section:not(.dark) .cta{background:var(--ink)}
 .kit__ico svg{width:21px;height:21px;fill:#fff}
 .kit__item h3{font-size:var(--text-lg);margin-bottom:.3rem}
 .kit__item p{font-size:var(--text-sm);color:var(--grey)}
-.sched{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:var(--sp-md);margin-top:var(--sp-lg)}
+.sched{background:var(--ink);color:#fff;border-radius:var(--r-lg);
+  padding:var(--sp-lg) var(--sp-md);margin:var(--sp-lg) auto 0;max-width:620px}
 .dark .sched{background:var(--ink-2);border:1px solid rgba(255,255,255,.12)}
-.sched h3{margin-bottom:var(--sp-sm);text-transform:uppercase;letter-spacing:-.02em;font-size:var(--text-lg)}
-.sched__row{display:flex;justify-content:space-between;gap:var(--sp-sm);padding:.6rem 0;
-  border-bottom:1px solid rgba(255,255,255,.1);font-size:var(--text-sm)}
-.sched__row:last-of-type{border-bottom:0}
-.sched__row b{font-weight:700;white-space:nowrap}
-.sched__row span{color:var(--grey-2);text-align:right}
+.sched h3{margin-bottom:var(--sp-md);text-transform:uppercase;letter-spacing:-.02em;
+  font-size:var(--text-lg);text-align:center}
+.sched__grid{display:grid;gap:0}
+.sched__row{display:flex;justify-content:space-between;align-items:baseline;gap:var(--sp-md);
+  padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:var(--text-sm)}
+.sched__row:last-child{border-bottom:0}
+.sched__row b{font-weight:700;white-space:nowrap;color:#fff}
+.sched__row span{color:var(--grey-2);white-space:nowrap}
 .sched__note{font-size:var(--text-xs);color:var(--grey-2);margin-top:var(--sp-sm)}
 
 .author{display:grid;gap:var(--sp-lg);width:100%;align-items:start}
+.author__photo{align-self:start;max-width:420px}
 .author__photo{background:var(--paper-2);border-radius:var(--r-lg);
   aspect-ratio:4/5;overflow:hidden;position:relative}
+
 .author__photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.author p{margin-bottom:var(--sp-sm);color:var(--grey);font-size:var(--text-sm);text-wrap:pretty}
+.author p{margin-bottom:var(--sp-md);color:var(--grey);font-size:var(--text-sm);text-wrap:pretty;line-height:1.6}
 .author p b{color:var(--ink);font-weight:700}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-sm);margin:var(--sp-md) 0}
-.stat{background:var(--paper-2);border-radius:var(--r);padding:var(--sp-sm) var(--sp-md)}
-.stat b{display:block;font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1;letter-spacing:-.03em;color:var(--red)}
-.stat span{font-size:var(--text-xs);color:var(--grey);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
-.checkme{margin-top:var(--sp-md);background:var(--paper-2);border-radius:var(--r-lg);padding:var(--sp-md)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-sm);margin:var(--sp-lg) 0;align-items:stretch}
+.stat{background:var(--paper-2);border-radius:var(--r);padding:var(--sp-md);
+  display:flex;flex-direction:column;justify-content:center;gap:.35rem;min-height:100%}
+.stat b{display:block;font-family:var(--font-display);font-size:clamp(1.375rem,2.4vw,2rem);font-weight:900;line-height:1;letter-spacing:-.04em;color:var(--red);white-space:nowrap}
+.stat span{font-size:clamp(.6875rem,1.1vw,.8125rem);color:var(--grey);text-transform:uppercase;letter-spacing:.05em;font-weight:700;line-height:1.25}
+.checkme{margin-top:var(--sp-lg);background:var(--paper-2);border-radius:var(--r-lg);
+  padding:var(--sp-md);border-left:3px solid var(--red)}
 .checkme p{margin-bottom:var(--sp-sm)}
-.checkme__links{display:flex;flex-wrap:wrap;gap:var(--sp-sm)}
-.checkme__links a{font-size:var(--text-sm);font-weight:700;color:var(--ink);text-decoration:none;
-  border-bottom:2px solid var(--red);padding-bottom:2px}
+.checkme__links{display:flex;flex-wrap:nowrap;gap:.5rem;margin-top:var(--sp-sm)}
+.checkme__links a{display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  padding:.4rem .75rem;border-radius:var(--r-pill);white-space:nowrap;min-width:0;
+  font-size:clamp(.6875rem,.95vw,.8125rem);font-weight:700;text-decoration:none;line-height:1.2;
+  color:var(--ink);background:var(--paper);border:1px solid var(--line);
+  transition:border-color .18s ease,background .18s ease,color .18s ease}
+.checkme__links a::after{content:"↗";font-size:.85em;opacity:.5}
+.checkme__links a:hover,.checkme__links a:focus-visible{
+  border-color:var(--red);color:var(--red-dark)}
+@media (max-width:520px){
+  .checkme__links{flex-wrap:wrap}
+}
 .dark .author p{color:var(--grey-2)}
 .dark .author p b{color:#fff}
 .dark .author__photo{background:var(--ink-2)}
 .dark .stat{background:var(--ink-2)}
 .dark .stat span{color:var(--grey-2)}
-.dark .checkme{background:var(--ink-2)}
+.dark .checkme{background:#1C1C1C;border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--red)}
 .dark .checkme p{color:var(--grey-2)}
 .dark .checkme p b{color:#fff}
-.dark .checkme__links a{color:#fff}
+.dark .checkme__links a{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+.dark .checkme__links a:hover,.dark .checkme__links a:focus-visible{
+  color:#fff;background:var(--red);border-color:var(--red)}
 
 .fit{display:grid;gap:var(--sp-lg);width:100%}
 .fit h3{margin-bottom:var(--sp-md);display:flex;align-items:center;gap:11px;text-transform:uppercase}
@@ -511,7 +529,7 @@ body.lock{overflow:hidden}
   .rules{grid-template-columns:repeat(3,1fr);gap:var(--sp-md)}
   .kit{gap:var(--sp-md)}
   .kit__item{grid-template-columns:48px 1fr}
-  .author{grid-template-columns:.75fr 1.25fr}
+  .author{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr)}
   .stats{grid-template-columns:repeat(4,1fr)}
   .fit{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:repeat(3,1fr);padding:0 var(--sp-lg)}
@@ -520,9 +538,6 @@ body.lock{overflow:hidden}
 }
 @media (min-width:1600px){
   :root{--text-hero:clamp(4.25rem,4.6vw,5.25rem)}
-  .pain{grid-template-columns:repeat(4,1fr)}
-  .kit{grid-template-columns:1fr 1fr;align-items:start}
-  .kit__item{grid-column:auto}
   .lead{max-width:120ch}
   .note{max-width:130ch}
 }
@@ -532,7 +547,6 @@ body.lock{overflow:hidden}
 }
 @media (min-width:1024px){
   :root{--m-tight:48ch; --m-wide:76ch}
-  .pain{grid-template-columns:repeat(4,1fr)}
   .week{grid-template-columns:repeat(4,1fr)}
   .kit__item .week{grid-template-columns:repeat(4,1fr)}
   .cta__txt{max-width:62ch}
@@ -726,13 +740,15 @@ body.lock{overflow:hidden}
     </div>
 
     <div class="sched">
-          <h3>Розклад</h3>
-          <div class="sched__row"><b>Знайомство</b><span>Вт, 15 вересня · 19:00</span></div>
-          <div class="sched__row"><b>Ефір №1</b><span>Вт, 22 вересня · 19:00</span></div>
-          <div class="sched__row"><b>Ефір №2</b><span>Вт, 20 жовтня · 19:00</span></div>
-          <div class="sched__row"><b>Ефір №3</b><span>Вт, 17 листопада · 19:00</span></div>
-          <div class="sched__row"><b>Завершення</b><span>Пн, 7 грудня · 19:00</span></div>
-        </div>
+      <h3>Розклад</h3>
+      <div class="sched__grid">
+        <div class="sched__row"><b>Знайомство</b><span>Вт, 15 вересня · 19:00</span></div>
+        <div class="sched__row"><b>Ефір №1</b><span>Вт, 22 вересня · 19:00</span></div>
+        <div class="sched__row"><b>Ефір №2</b><span>Вт, 20 жовтня · 19:00</span></div>
+        <div class="sched__row"><b>Ефір №3</b><span>Вт, 17 листопада · 19:00</span></div>
+        <div class="sched__row"><b>Завершення</b><span>Пн, 7 грудня · 19:00</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
