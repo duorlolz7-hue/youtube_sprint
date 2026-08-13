@@ -72,6 +72,7 @@
 
   --r:12px; --r-lg:20px; --r-pill:999px;
   --wrap:2200px;
+  --pic-w:clamp(20rem,26vw,34rem);
 
   /* довжина рядка: вужче на мобільному, ширше на десктопі */
   --m-tight:38ch; --m-wide:60ch;
@@ -203,6 +204,7 @@ section:not(.dark) .cta{background:var(--ink)}
 /* ── КАРТИНКА В КАРТЦІ ── */
 .pic{margin:var(--sp-md) 0 0;position:relative;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--line);background:var(--ink-2);max-width:640px}
+.kit__item--pic .pic{grid-column:1 / -1}
 .pic img{width:100%;height:auto;display:block}
 .pic figcaption{position:absolute;left:0;right:0;bottom:0;
   padding:var(--sp-lg) var(--sp-sm) var(--sp-sm);
@@ -550,6 +552,9 @@ body.lock{overflow:hidden}
   .rule p{max-width:46ch}
   .kit{gap:var(--sp-md)}
   .kit__item{grid-template-columns:48px 1fr}
+  .kit__item--pic{grid-template-columns:48px minmax(0,1fr) minmax(300px,var(--pic-w))}
+  .kit__item--pic > div{grid-column:2}
+  .kit__item--pic .pic{grid-column:3;grid-row:1;margin:0;align-self:start;max-width:none;width:100%}
   .author{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr)}
   .stats{grid-template-columns:repeat(4,1fr)}
   .fit{grid-template-columns:1fr 1fr}
@@ -728,28 +733,28 @@ body.lock{overflow:hidden}
             </div>
           </div>
         </div>
-        <div class="kit__item">
+        <div class="kit__item kit__item--pic">
           <span class="kit__ico"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg></span>
           <div>
             <h3>Три прямі ефіри з розборами</h3>
             <p>Закриті дзвінки для учасників спринту по дві години, завжди о 19:00 за Києвом. За ефір розбираємо чотири канали з тих, хто присутній на трансляції. Відбувається це завдяки випадковому колесу, де ніхто не знає чий канал випаде саме зараз, якщо ваш канал розібрали другий раз ви потрапити в колесо не можете. Інколи чужий розбір інколи корисніше за власний.</p>
-            <figure class="pic">
-              <img src="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558906/image_2026-08-12_20-13-10.png"
-                   alt="Кадр із прямого ефіру: розбір каналу учасника" loading="lazy">
-              <figcaption><span class="pic__live">● Live</span> Розбір каналу на ефірі</figcaption>
-            </figure>
           </div>
+          <figure class="pic">
+            <img src="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558906/image_2026-08-12_20-13-10.png"
+                 alt="Кадр із прямого ефіру: розбір каналу учасника" loading="lazy">
+            <figcaption><span class="pic__live">● Live</span> Розбір каналу на ефірі</figcaption>
+          </figure>
         </div>
-        <div class="kit__item">
+        <div class="kit__item kit__item--pic">
           <span class="kit__ico"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm2 4v3h6V7H5zm8 0v3h6V7h-6zM5 12v3h6v-3H5zm8 0v3h6v-3h-6zM5 17v2h6v-2H5zm8 0v2h6v-2h-6z"/></svg></span>
           <div>
             <h3>Спільний трекер</h3>
             <p>Google-таблиця, де записані плани всіх учасників і фіксуються результати. Видно кожного і кожен тиждень.</p>
-            <figure class="pic">
-              <img src="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558905/image_2026-08-12_20-21-24.png"
-                   alt="Спільний трекер публікацій учасників спринту" loading="lazy">
-            </figure>
           </div>
+          <figure class="pic">
+            <img src="https://res.cloudinary.com/dkpbsucb/image/upload/v1786558905/image_2026-08-12_20-21-24.png"
+                 alt="Спільний трекер публікацій учасників спринту" loading="lazy">
+          </figure>
         </div>
         <div class="kit__item">
           <span class="kit__ico"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-2.7 0-8 1.3-8 4v3h10v-3c0-1 .4-2 1.3-2.8-1.1-.2-2.3-.2-3.3-.2zm8 0c-.3 0-.7 0-1 .1 1.2.9 2 2 2 3.4V20h7v-3c0-2.7-5.3-4-8-4z"/></svg></span>
